@@ -1,4 +1,4 @@
-const CACHE='jiji-web-0.3.0-2';
+const CACHE='jiji-web-0.3.0-3';
 const ASSETS=['./','./index.html','./style.css','./app.mjs','./sync.mjs','./store.mjs'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('jiji-web-')&&k!==CACHE).map(k=>caches.delete(k))))));
