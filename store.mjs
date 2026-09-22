@@ -2,7 +2,7 @@ let database, opening, initialization, draftClaim;
 const channel = typeof BroadcastChannel === 'function' ? new BroadcastChannel('jiji-refresh') : null;
 export let tabID = sessionStorage.getItem('jiji-tab') ?? crypto.randomUUID();
 sessionStorage.setItem('jiji-tab',tabID);
-export function blank() { return {notes:[],drafts:{},bases:{},config:{owner:'moiiiiiiist',repo:'jiji-sync-data',branch:'main'},preferences:{name:'自记',placeholder:'记点什么…',textSize:16}}; }
+export function blank() { return {notes:[],drafts:{},bases:{},config:{owner:'moiiiiiiist',repo:'jiji-sync-data',branch:'main'},preferences:{name:'自记',subtitle:'',placeholder:'记点什么…',textSize:16}}; }
 function forget(db) { if(database===db) database=null; }
 function connect() {
   if(database) return Promise.resolve(database);
